@@ -19,7 +19,7 @@ let Navbar=(props)=>{
           <a className="nav-link active" aria-current="page" href="/">{props.main}</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/about">About</a>
+          <a className="nav-link" href="/">About</a>
         </li>
         <li><form className="d-flex mx-5" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

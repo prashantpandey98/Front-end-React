@@ -24,9 +24,9 @@ const handleReverseText = ()=>{
   }
 
   const handleCopyText=(event)=>{
-   let data=event.target.value;
+   let data=document.getElementById("myBox");
    data.select();
-   navigator.clipboard.writeText(data);
+   navigator.clipboard.writeText(data.value);
   }
 
 const handleOnChange=(event)=>{
