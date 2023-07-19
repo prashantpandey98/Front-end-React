@@ -1,6 +1,9 @@
-.card{
-    height: 80px;
-    width: 70vh;
-    background-color: #4d4a4a;
-    border-radius: 10%;
-}
+.card {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  

@@ -3,8 +3,8 @@ import Button from "../UI/Button";
 const ItemList =(props)=>{
 
     const deleteItem=(id)=>{
-        localStorage.remove(id);
-        props.onDeleteProduct();
+        localStorage.removeItem(id);
+        props.onDeleteProduct(id);
     }
 
     return(
@@ -37,7 +37,7 @@ const ItemList =(props)=>{
         })}
         </ul>
         <ul>
-        <h2>SKincare Items</h2>
+        <h2>Skincare Items</h2>
         {props.items.map((product)=>{
             if(product.category=== "Skincare"){
                 return (

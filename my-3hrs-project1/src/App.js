@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './Components/form/Form';
 import ItemList from './Components/form/ItemList';
+import Card from './Components/UI/Card';
 
 function App() {
 
@@ -18,11 +19,10 @@ function App() {
   }
 
   return (
-    <div className="app">
-     <h2>My React App</h2>
+    <Card>
      <Form onAddProduct={addProductHandler}/>
      <ItemList items={itemList} onDeleteProduct={deleteProductHandler}/>
-    </div>
+    </Card>
   );
 }
 

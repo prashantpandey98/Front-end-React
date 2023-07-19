@@ -7,7 +7,7 @@ const Form=(props)=>{
     const [prodId, setProdId]=useState("");
     const [sellPrice, setSellPrice]= useState("");
     const [itemName, setItemName]= useState("");
-    const [itemCategory, setItemCategory]= useState("");
+    const [itemCategory, setItemCategory]= useState("Select a Category");
 
     const prodIdHandler=(e)=>{
         setProdId(e.target.value);
@@ -21,7 +21,6 @@ const Form=(props)=>{
 
     const formSubmitHandler =(e)=>{
         e.preventDefault();
-        console.log("submit")
 
         const item={
             id: prodId,
@@ -30,7 +29,11 @@ const Form=(props)=>{
             category: itemCategory
         }
         props.onAddProduct(item)
-        console.log(item);
+       
+        setProdId("");
+        setSellPrice("");
+        setItemName("");
+        setItemCategory("Select a Category");
     }
 
 
@@ -42,11 +45,12 @@ const Form=(props)=>{
         <Input type="text" label={"Product Name : "} id="name" name="name" value={itemName} onChange={nameHandler} />
         <label htmlFor="category">Choose a Category : </label>
         <select id="category" value={itemCategory} onChange={(e)=> setItemCategory(e.target.value)}>
-                <option value="Electronics">Electronics</option>
-                <option value="Food">Food</option>
-                <option value="Skincare">Skincare</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Footwear">Footwear</option>
+                <option disabled>Select a Category</option>
+                <option>Electronics</option>
+                <option>Food</option>
+                <option>Skincare</option>
+                <option>Clothes</option>
+                <option>Footwear</option>
             </select>
             <Button type="submit" >Add Product</Button>
             </form>
