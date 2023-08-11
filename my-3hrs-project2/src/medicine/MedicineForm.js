@@ -17,11 +17,6 @@ const MedicineForm = (props) => {
         props.onAddToCart(medsQuantityNum)
     }
 
-    // const onClickHandler=(e,id)=>{
-    //   e.stopPropagation()
-    //   props.onDelete(id);
-    // }
-
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
@@ -37,7 +32,7 @@ const MedicineForm = (props) => {
         }}
       />
       <button className={classes.addBtn}>+ Add Meds</button>
-       {/*<button className={classes.deleteBtn} onClick={onClickHandler}>Delete Meds</button>*/}
+       <button className={classes.deleteBtn} disabled>Delete Meds</button>
       {!quantityValid && <p><b>Please Enter a Valid Quantity of Medicine (1-10). </b></p>}
     </form>
   )

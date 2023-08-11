@@ -3,6 +3,7 @@ import Cart from "./cart/Cart";
 import CartProvider from "./store/CartProvider"
 import Header from "./header/Header";
 import Medicine from "./medicine/Medicine";
+import ProductContext from "./store/ProductContext";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     setShowCart(false);
   }
   return (
+    <ProductContext>
     <CartProvider>
     <Header onShowCart={showCartHandler}/>
     {showCart && <Cart onClose={closeCartHandler}/>}
@@ -22,6 +24,7 @@ function App() {
     <Medicine/>
     </main>
     </CartProvider>
+    </ProductContext>
   );
 } 
 

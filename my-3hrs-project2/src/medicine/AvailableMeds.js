@@ -6,7 +6,7 @@ import MedsItem from './MedsItem';
 
  const AvailableMeds = (props) => {
 const medsList= props.MEDS.map((med, index)=>(<MedsItem key={index+1}
-  name={med.name} id={`med${index+1}`} desc={med.desc} price={med.price}/>));
+  name={med.name} id={`med${index+1}`} desc={med.desc} price={med.price} totalQuantity={med.totalQuantity}/>));
 
   return (
     <section className={classes.meds}>

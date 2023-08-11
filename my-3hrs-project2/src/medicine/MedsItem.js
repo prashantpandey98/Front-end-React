@@ -16,7 +16,8 @@ myData.addMeds({
     id:props.id,
     name:props.name,
     price:props.price,
-    quantity:quantity
+    quantity:quantity,
+    totalQuantity:props.totalQuantity
 })
 }
 
@@ -26,6 +27,7 @@ myData.addMeds({
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.desc}</div>
         <div className={classes.price}>{price}</div>
+        <div className={classes.totalQuantity}>Available Quantity- x{props.totalQuantity}</div>
       </div>
       <div>
       <MedicineForm onAddToCart={addToCartHandler}/>
