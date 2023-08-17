@@ -3,7 +3,7 @@ import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import { useSelector, useDispatch } from 'react-redux';
-import { uiActions } from './store/uiSlice';
+import { sendCartData,fetchCartData } from './store/cart-actions';
 import Notification from './components/UI/Notification'
 
 let isInitial=true;
@@ -15,39 +15,20 @@ function App() {
   const notification= useSelector((state)=> state.ui.notification);
 
  
+  useEffect(()=>{
+    dispatch(fetchCartData());
+  },[dispatch])
 
   useEffect(()=>{
-    const sendCartData=async()=>{
-      dispatch(uiActions.showNotification({
-        status:'pending',
-        title:'Sending...',
-        message:'Sending cart Data.'
-      }))
-     const response= await fetch("https://react-movieapp-demo-default-rtdb.firebaseio.com/cart.json",{
-        method: "PUT",
-        body: JSON.stringify(cart)
-      })
-      if(!response.ok){
-        throw new Error("Sending Cart Data Failed..")
-      }
-      dispatch(uiActions.showNotification({
-        status:'success',
-        title:'Success!!',
-        message:'Sent cart data successfully..'
-      }))
-    }
+   
     if(isInitial){   //So that the useEffect does run on first render. Blocks the code below from executing on the first render
       isInitial=false;
       return;
     }
+    if(cart.changed===true){
+      dispatch(sendCartData(cart));
+    }
 
-   sendCartData().catch((error)=>{
-    dispatch(uiActions.showNotification({
-      status:'error',
-      title:'Error...',
-      message:'Sending cart data failed'
-    }))
-   })
   },[cart, dispatch])
 
   return (
