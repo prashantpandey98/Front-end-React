@@ -2,35 +2,35 @@ import classes from './AvailableMeals.module.css';
 import MealItem from './MealItem/MealItem';
 import Card from './../UI/Card';
 
-const DUMMY_MEALS = [
+const My_Menu = [
   {
     id: 'm1',
-    name: 'Sushi',
-    description: 'Finest fish and veggies',
-    price: 22.99,
+    name: 'Biryani',
+    description: 'Tasty spicy best Biryani',
+    price: 299.99,
   },
   {
     id: 'm2',
-    name: 'Schnitzel',
-    description: 'A german specialty!',
-    price: 16.5,
+    name: 'Dal Makhni',
+    description: 'A yummy and healthy experience!',
+    price: 249.99,
   },
   {
     id: 'm3',
-    name: 'Barbecue Burger',
-    description: 'American, raw, meaty',
-    price: 12.99,
+    name: 'Shahi Paneer',
+    description: 'Best Indian cuisine!!',
+    price: 499.99,
   },
   {
     id: 'm4',
-    name: 'Green Bowl',
-    description: 'Healthy...and green...',
-    price: 18.99,
+    name: 'Veggie Salad',
+    description: 'Keep it simple and healty...',
+    price: 200.00,
   },
 ];
 
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) =>(
+  const mealsList = My_Menu.map((meal) =>(
     <MealItem key={meal.id}
     name={meal.name} id={meal.id} description={meal.description} price={meal.price} /> 
   ));

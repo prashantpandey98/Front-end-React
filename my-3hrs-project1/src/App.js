@@ -15,7 +15,7 @@ function App() {
 
   const deleteProductHandler=(itemId)=>{
     let newProductList= itemList.filter(ele=> ele.id !==itemId);
-    setItemList([...newProductList]);
+    setItemList([...newProductList]);  
   }
 
   return (
